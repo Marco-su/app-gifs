@@ -3,7 +3,7 @@ import { API_KEY, API_URL } from "../utils/const";
 
 //---Get searched gifs
 export const getGifs = async (keyword, offset) => {
-  await axios({
+  return await axios({
     url: `${API_URL}gifs/search?${API_KEY}&q=${keyword}&limit=20&offset=${offset}&rating=g&lang=en`,
   });
 };
@@ -24,7 +24,7 @@ export const getSingleGif = async (id) => {
 
 //---Get trending term
 export const getTrendingTerm = async () => {
-  await axios({
+  return await axios({
     url: `${API_URL}trending/searches?${API_KEY}`,
   });
 };

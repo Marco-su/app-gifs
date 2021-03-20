@@ -1,5 +1,5 @@
 //---Imports
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import SearchForm from "../searchForm/SearchForm";
@@ -42,4 +42,4 @@ const DefaultGifs = () => {
 };
 
 //---Export
-export default memo(DefaultGifs);
+export default DefaultGifs;
