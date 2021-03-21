@@ -2,9 +2,11 @@ import axios from "axios";
 import { API_KEY, API_URL } from "../utils/const";
 
 //---Get searched gifs
-export const getGifs = async (keyword, offset) => {
+export const getGifs = async (keyword, page) => {
   return await axios({
-    url: `${API_URL}gifs/search?${API_KEY}&q=${keyword}&limit=20&offset=${offset}&rating=g&lang=en`,
+    url: `${API_URL}gifs/search?${API_KEY}&q=${keyword}&limit=20&offset=${
+      20 * page
+    }&rating=g&lang=en`,
   });
 };
 
