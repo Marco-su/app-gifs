@@ -7,7 +7,7 @@ import SingleGif from "../pages/singleGif/singleGif";
 const MyRoutes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={DefaultGifs} />
+      <Route exact path={["/", "/app-gifs"]} component={DefaultGifs} />
       <Route path="/search/:term" component={GifsList} />
       <Route path="/gif/:gifId" component={SingleGif} />
       <Route path="*" component={ErrorPage} />
