@@ -1,4 +1,6 @@
+import "./TrendingTerms.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { getTrendingTerm } from "../../services/getGifs";
 
@@ -16,12 +18,22 @@ const TrendingTerms = () => {
     <div id="trending-terms">
       {errorTerms ? null : (
         <>
-          <h3>Trending Terms</h3>
-          {trendingTerms.map((term) => (
-            <span className="trending-term" key={term}>
-              {term}
-            </span>
-          ))}
+          <h4>Trending</h4>
+
+          <div className="mb-3">
+            <ul className="list-inline">
+              {trendingTerms.map((term) => (
+                <li className="list-inline-item my-1" key={term}>
+                  <Link
+                    className="term text-decoration-none rounded-1"
+                    to={`/search/${term}`}
+                  >
+                    {term}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </>
       )}
     </div>

@@ -1,0 +1,12 @@
+#trending-terms .term {
+  background: #fff;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.2rem 0.4rem;
+  transition: color 0.3s;
+}
+
+#trending-terms .term:hover {
+  background: var(--secondary);
+  color: var(--hover-text);
+}

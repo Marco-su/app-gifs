@@ -1,0 +1,11 @@
+#single-gif {
+  text-align: center;
+}
+
+#single-gif h2 {
+  color: var(--hover-text);
+}
+
+#single-gif img {
+  max-width: 100%;
+}

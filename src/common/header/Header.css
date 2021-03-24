@@ -1,0 +1,11 @@
+#main-header {
+  background: var(--primary);
+}
+
+#main-header a {
+  color: var(--secondary);
+  transition: color 0.15s;
+}
+#main-header a:hover {
+  color: #fff;
+}

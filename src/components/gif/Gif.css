@@ -1,0 +1,14 @@
+#gif-container {
+  margin-bottom: 0;
+}
+
+.gif-image {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.gif-image:hover {
+  transform: scale(1.05);
+}

@@ -1,8 +1,8 @@
 //---Imports
+import "./GifsList.css";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 
-import SearchForm from "../../components/searchForm/SearchForm";
 import { getGifs } from "../../services/getGifs";
 import { IsIntersecting } from "../../services/intersectionObserver";
 import Gif from "../../components/gif/Gif";
@@ -40,6 +40,7 @@ const GifsList = () => {
 
         setTimeout(() => {
           setReadyForInfScroll(true);
+
           res.data.data.length < 20
             ? setAllowNextPage(false)
             : setAllowNextPage(true);
@@ -65,25 +66,29 @@ const GifsList = () => {
   //---Render
   return (
     <div id="gifs-list">
-      <SearchForm />
-
       <h3 className="term">{term}</h3>
 
-      {errorSearching ? (
-        <span className="error-searching-gifs">Error loading gifs</span>
-      ) : (
-        gifs.map((gif) => (
-          <Gif
-            key={gif.id}
-            id={gif.id}
-            src={gif.images.fixed_width.url}
-            alt={gif.title}
-          />
-        ))
-      )}
+      <div className="row">
+        <div className="loaded-gifs col-md-10 offset-md-1">
+          {errorSearching ? (
+            <span className="error-loading-gifs">Error loading gifs</span>
+          ) : (
+            gifs.map((gif) => (
+              <Gif
+                key={gif.id}
+                id={gif.id}
+                src={gif.images.fixed_width.url}
+                alt={gif.title}
+              />
+            ))
+          )}
+        </div>
+      </div>
 
       {gifs.length === 0 && readyForInfScroll ? (
-        <h3 className="no-gif-found">No gifs were found for your search</h3>
+        <h3 className="h4 mt-4 text-center">
+          Sorry, no gifs were found for your search.
+        </h3>
       ) : null}
 
       <div ref={observedElement}></div>

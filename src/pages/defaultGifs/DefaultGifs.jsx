@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Gif from "../../components/gif/Gif";
 
-import SearchForm from "../../components/searchForm/SearchForm";
 import { getTrendingGifs } from "../../services/getGifs";
 
 const DefaultGifs = () => {
@@ -23,21 +22,21 @@ const DefaultGifs = () => {
 
   //---Render
   return (
-    <div id="default-gifs-container">
-      <SearchForm />
-
-      {errorGifs ? (
-        <span className="error-default-gifs">Error loading gifs</span>
-      ) : (
-        trendingGifs.map((gif) => (
-          <Gif
-            key={gif.id}
-            id={gif.id}
-            src={gif.images.fixed_width.url}
-            alt={gif.title}
-          />
-        ))
-      )}
+    <div className="row">
+      <div className="loaded-gifs col-md-10 offset-md-1">
+        {errorGifs ? (
+          <span className="error-loading-gifs">Error loading gifs.</span>
+        ) : (
+          trendingGifs.map((gif) => (
+            <Gif
+              key={gif.id}
+              id={gif.id}
+              src={gif.images.fixed_width.url}
+              alt={gif.title}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 };
