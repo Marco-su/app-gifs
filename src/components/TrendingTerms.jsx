@@ -1,8 +1,7 @@
-import "./TrendingTerms.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { getTrendingTerm } from "../../services/getGifs";
+import { getTrendingTerm } from "../helpers/getGifs";
 
 const TrendingTerms = () => {
   const [trendingTerms, setTrendingTerms] = useState([]);

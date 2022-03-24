@@ -1,0 +1,18 @@
+@use "../utils/variables" as v;
+
+#main-header {
+    background: v.$primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: v.$secondary;
+        transition: color 0.15s;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}

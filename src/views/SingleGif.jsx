@@ -1,6 +1,5 @@
-import "./singleGif.css";
 import { useEffect, useState } from "react";
-import { getSingleGif } from "../../services/getGifs";
+import { getSingleGif } from "../helpers/getGifs";
 import { useParams } from "react-router-dom";
 
 const SingleGif = () => {

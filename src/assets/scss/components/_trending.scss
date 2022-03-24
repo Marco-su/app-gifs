@@ -1,0 +1,14 @@
+@use "../utils/variables"as v;
+
+#trending-terms .term {
+    background: #fff;
+    border: 1px solid v.$secondary;
+    color: v.$secondary;
+    padding: 0.2rem 0.4rem;
+    transition: color 0.3s;
+
+    &:hover {
+        background: v.$secondary;
+        color: v.$hover-text;
+    }
+}

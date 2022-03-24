@@ -1,0 +1,39 @@
+@use "../utils/variables" as v;
+
+#single-gif {
+    text-align: center;
+
+    h2 {
+        color: v.$hover-text;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+#gifs-list .term {
+    color: v.$hover-text;
+}
+
+.gif-image {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+    width: 100%;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.loaded-gifs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.error-loading-gifs {
+    font-size: 1.5rem;
+    color: v.$warning;
+}

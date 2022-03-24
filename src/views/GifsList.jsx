@@ -1,11 +1,10 @@
 //---Imports
-import "./GifsList.css";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 
-import { getGifs } from "../../services/getGifs";
-import { IsIntersecting } from "../../services/intersectionObserver";
-import Gif from "../../components/gif/Gif";
+import { getGifs } from "../helpers/getGifs";
+import { IsIntersecting } from "../helpers/intersectionObserver";
+import Gif from "../components/Gif";
 
 const GifsList = () => {
   const observedElement = useRef();

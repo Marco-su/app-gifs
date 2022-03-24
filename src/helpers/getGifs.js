@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY, API_URL } from "../utils/const";
+import { API_KEY, API_URL } from "../constants/const";
 
 //---Get searched gifs
 export const getGifs = async (keyword, page) => {

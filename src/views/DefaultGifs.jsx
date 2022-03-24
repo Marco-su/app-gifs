@@ -1,8 +1,7 @@
 //---Imports
 import { useState, useEffect } from "react";
-import Gif from "../../components/gif/Gif";
-
-import { getTrendingGifs } from "../../services/getGifs";
+import Gif from "../components/Gif";
+import { getTrendingGifs } from "../helpers/getGifs";
 
 const DefaultGifs = () => {
   //---States

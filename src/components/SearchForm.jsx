@@ -1,4 +1,3 @@
-import "./SearchForm.css";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
 
